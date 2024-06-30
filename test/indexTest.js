@@ -1,10 +1,10 @@
-require ( './helpers.js' );
+require('./helpers.js');
 
 describe('index.js', function () {
   const drivers = ['Antonia', 'Nuru', 'Amari', 'Mo'];
 
   afterEach(function () {
-    expect(drivers, 'MAKE SURE YOUR ARRAY MANIPULATIONS ARE NON-DESTRUCTIVE').to.eql(['Antonia', 'Nuru', 'Amari', 'Mo']);
+    expect(drivers, "MAKE SURE YOUR ARRAY MANIPULATIONS ARE NON-DESTRUCTIVE").to.eql(['Antonia', 'Nuru', 'Amari', 'Mo']);
   });
 
   describe('returnFirstTwoDrivers()', function () {
@@ -20,17 +20,16 @@ describe('index.js', function () {
   });
 
   describe('selectingDrivers', function () {
-    it('has the `returnFirstTwoDrivers` function to as its first element', function () {
+    it('has the `returnFirstTwoDrivers` function as its first element', function () {
       expect(selectingDrivers[0]).to.eql(returnFirstTwoDrivers);
     });
 
-    it('has the `returnLastTwoDrivers` function to as its last element', function () {
+    it('has the `returnLastTwoDrivers` function as its last element', function () {
       expect(selectingDrivers[1]).to.eql(returnLastTwoDrivers);
     });
 
     it('allows us to invoke either function from the array', function () {
       expect(selectingDrivers[0](drivers)).to.eql(['Antonia', 'Nuru']);
-
       expect(selectingDrivers[1](drivers)).to.eql(['Amari', 'Mo']);
     });
   });
@@ -38,13 +37,11 @@ describe('index.js', function () {
   describe('createFareMultiplier()', function () {
     it('returns a function', function () {
       const fareMultiplier = createFareMultiplier(2);
-
       expect(fareMultiplier).to.be.a('function');
     });
 
     it('should multiply a given value using the created multiplier', function () {
       const fareQuintupler = createFareMultiplier(5);
-
       expect(fareQuintupler(5)).to.eql(25);
     });
   });
@@ -64,7 +61,7 @@ describe('index.js', function () {
       expect(fareTripler).to.be.a('function');
     });
 
-    it('triples fares', function() {
+    it('triples fares', function () {
       expect(fareTripler(12)).to.eql(36);
     });
   });
